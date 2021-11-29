@@ -463,20 +463,19 @@ a {
       align-items: flex-start;
       background-color: $primary-color;
       overflow: auto;
-      overflow-scrolling: auto;
       flex-wrap: nowrap;
     }
 
     @media screen and (max-width: 700px) {
       top: 130px;
     }
-
     @media screen and (max-width: 425px) {
       top: 170px;
       width: 100vw;
     }
     @media screen and (orientation: landscape) {
       height: calc(100vh - 84px);
+      overflow: auto;
     }
   }
 

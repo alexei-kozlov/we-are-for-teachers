@@ -446,7 +446,6 @@ a {
     align-items: flex-start;
     background-color: #612b1c;
     overflow: auto;
-    overflow-scrolling: auto;
     flex-wrap: nowrap;
   }
 }
@@ -464,6 +463,7 @@ a {
 @media screen and (orientation: landscape) {
   .nav__list {
     height: calc(100vh - 84px);
+    overflow: auto;
   }
 }
 .nav__item {
