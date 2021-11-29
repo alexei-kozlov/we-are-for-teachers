@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab:wght@400;700&display=swap');
 
-$primary-color:   #612b1c;
+$primary-color: #612b1c;
 $secondary-color: #fff06a;
 
 * {
@@ -189,6 +189,9 @@ a {
       width: 90%;
       order: 3;
     }
+    @media screen and (max-width: 425px) {
+      order: initial;
+    }
   }
 }
 
@@ -286,13 +289,15 @@ a {
 .nav {
   position: sticky;
   top: 0;
-  z-index: 4;
+  z-index: 3;
   background-color: $primary-color;
 
   @media screen and (max-width: 850px) {
     position: fixed;
     padding: 0 30px 0 10px;
     width: 100%;
+    background-color: transparent;
+    left: -10px;
   }
 
   .inner {
@@ -303,15 +308,27 @@ a {
     align-items: center;
     position: relative;
 
+    @media screen and (max-width: 1200px) {
+      justify-content: space-around;
+      padding: 20px;
+    }
+
     @media screen and (max-width: 850px) {
       height: 0;
       padding: 0;
+
+      &--menu-wrapper {
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+      }
     }
 
     @media screen and (min-width: 851px) {
       &--sticky {
+        justify-content: space-around;
         height: 80px;
-        padding: 10px 0;
+        padding: 10px;
       }
     }
   }
@@ -320,7 +337,19 @@ a {
     position: absolute;
     left: 0;
     bottom: 0;
-    z-index: -1;
+
+    @media screen and (max-width: 1200px) {
+      left: -8px;
+      bottom: 100%;
+    }
+
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
+
+    &--hidden {
+      display: none;
+    }
   }
 
   &__menu-field {
@@ -330,7 +359,6 @@ a {
     margin-left: 30px;
     background-color: $primary-color;
     cursor: pointer;
-    z-index: 4;
     transition-duration: .5s;
 
     @media screen and (max-width: 850px) {
@@ -410,6 +438,10 @@ a {
     align-items: center;
     flex-wrap: wrap;
 
+    @media screen and (max-width: 1100px) {
+      margin: 0 auto;
+    }
+
     @media screen and (max-width: 1000px) {
       padding: 6px 0 12px;
       background-color: $primary-color;
@@ -419,9 +451,9 @@ a {
     @media screen and (max-width: 850px) {
       position: fixed;
       top: 84px;
-      left: 0;
-      width: 100vw;
-      height: calc(100vh - 84px);
+      right: 0;
+      width: 300px;
+      height: auto;
       padding-top: 20px;
       flex-direction: column;
       justify-content: flex-start;
@@ -433,11 +465,11 @@ a {
 
     @media screen and (max-width: 700px) {
       top: 130px;
-      height: calc(100vh - 120px);
     }
 
     @media screen and (max-width: 425px) {
-      top: 120px;
+      top: 170px;
+      width: 100vw;
     }
   }
 
@@ -472,7 +504,8 @@ a {
 
     @media screen and (max-width: 850px) {
       font-size: 18px;
-      padding: 20px 0;
+      padding: 10px 0;
+      margin: 10px 0;
       flex-grow: 1;
     }
 
@@ -507,8 +540,11 @@ a {
   .inner {
     padding: 135px 0 90px;
 
-    @media screen and (max-width: 650px) {
-      padding: 15px 0;
+    @media screen and (max-width: 1100px) {
+      padding: 15px 25px;
+    }
+    @media screen and (max-width: 425px) {
+      padding: 10px;
     }
   }
 
@@ -531,7 +567,6 @@ a {
       width: 48%;
       margin-bottom: 5px;
       padding-bottom: 10px;
-      border-bottom: 1px dotted $primary-color;
     }
     @media screen and (max-width: 600px) {
       width: 100%;
@@ -543,22 +578,31 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    height: 205px;
+    min-height: 205px;
     margin-bottom: 15px;
     position: relative;
 
-    @media screen and (max-width: 1100px) {
-      height: 280px;
+    @media screen and (max-width: 1250px) {
+      min-height: 300px;
       justify-content: flex-end;
+      align-items: flex-start;
     }
 
     @media screen and (max-width: 600px) {
       justify-content: center;
-      height: 205px;
+      min-height: 205px;
+      align-items: flex-end;
     }
 
-    @media screen and (max-width: 475px) {
-      height: 140px;
+    @media screen and (max-width: 550px) {
+      min-height: 140px;
+    }
+
+    @media screen and (max-width: 400px) {
+      align-items: flex-start;
+      justify-content: flex-end;
+      min-height: 225px;
+      margin-left: 10px;
     }
   }
 
@@ -566,6 +610,14 @@ a {
     position: absolute;
     left: -46px;
     top: -10px;
+
+    @media screen and (max-width: 1250px) {
+      left: 0;
+    }
+    @media screen and (max-width: 550px) {
+      left: -20px;
+      top: -7px;
+    }
   }
 
   &__avatar {
@@ -576,11 +628,19 @@ a {
     height: 121px;
     border-radius: 50%;
     z-index: 1;
+
+    @media screen and (max-width: 1250px) {
+      left: 46px;
+    }
+
+    @media screen and (max-width: 550px) {
+      left: 26px;
+    }
   }
 
   &__avatar-frame,
   &__avatar {
-    @media screen and (max-width: 475px) {
+    @media screen and (max-width: 550px) {
       transform: translateY(-30px) scale(.7);
     }
   }
@@ -591,18 +651,25 @@ a {
     padding-left: 8px;
     margin-bottom: 12px;
 
+    @media screen and (max-width: 1250px) {
+      width: 80%;
+      padding-left: 24px;
+    }
+
     @media screen and (max-width: 1100px) {
-      width: 100%;
+      padding-left: 0;
     }
 
     @media screen and (max-width: 600px) {
       justify-content: center;
       width: 60%;
     }
+    @media screen and (max-width: 425px) {
+      width: 100%;
+    }
   }
 
   &__author {
-    padding: 0 50px 0 8px;
     font-family: "Roboto Slab", "Times New Roman", serif;
     font-size: 16px;
     font-weight: 400;
@@ -897,6 +964,10 @@ a {
         border-color: $primary-color;
       }
 
+      @media screen and (max-width: 475px) {
+        top: calc(100% + 10px);
+      }
+
       &::before {
         content: '\27F6';
         display: block;
@@ -958,7 +1029,14 @@ a {
     }
 
     @media screen and (max-width: 475px) {
-      margin: 20px;
+      margin: 30px;
+      width: 264px;
+      height: 296px;
+      box-shadow: none;
+    }
+
+    @media screen and (max-width: 375px) {
+      margin: 10px;
       width: 264px;
       height: 296px;
       box-shadow: none;

@@ -2,12 +2,15 @@
 
   // Slider Congratulations
   $('.congratulations__slider').slick({
-    speed: 1000,
+    speed: 1500,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     arrows: true,
     dots: true,
     infinite: true,
+    cssEase: 'linear',
+    centerMode: true,
+    variableWidth: true,
     slidesToShow: 5,
     slidesToScroll: 1,
     pauseOnDotsHover: true,
@@ -34,13 +37,14 @@
     ]
   });
 
-  // Slider Congratulations
+  // Slider Cards
   $('.cards__slider').slick({
     centerMode: true,
     centerPadding: '38px',
-    speed: 1000,
+    speed: 1500,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
+    cssEase: 'ease-in-out',
     arrows: true,
     dots: true,
     infinite: true,
@@ -63,9 +67,9 @@
         }
       },
       {
-        breakpoint: 425,
+        breakpoint: 450,
         settings: {
-          centerPadding: '20px',
+          centerPadding: '30px',
           dots: false,
           slidesToShow: 1
         }
@@ -75,16 +79,28 @@
 
   // Toggle mobile-menu
   $('.nav__menu-field').on('click', function () {
+    $('.nav .inner').toggleClass('inner--menu-wrapper');
+    $('.nav__menu').toggleClass('nav__menu--active');
+    $('.nav__menu-field').toggleClass('nav__menu-field--active');
+  });
+
+  // Toggle mobile-menu after choose menu-item
+  $('.nav__item').on('click', function () {
+    $('.nav .inner').removeClass('inner--menu-wrapper');
     $('.nav__menu').toggleClass('nav__menu--active');
     $('.nav__menu-field').toggleClass('nav__menu-field--active');
   });
 
   // Navigation work as sticky-fixed after scroll
   $(window).on('scroll', function () {
-    if ($(this).scrollTop() > 100) {
+    let header = $('.header').height();
+    let promo = $('.promo').height();
+    if ($(this).scrollTop() > (header + promo)) {
       $('.nav .inner').addClass('inner--sticky');
+      $('.nav__camera-roll').addClass('nav__camera-roll--hidden');
     } else {
       $('.nav .inner').removeClass('inner--sticky');
+      $('.nav__camera-roll').removeClass('nav__camera-roll--hidden');
     }
   });
 
