@@ -460,8 +460,9 @@ a {
     width: 100vw;
   }
 }
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
   .nav__list {
+    width: 100vw;
     height: calc(100vh - 84px);
     overflow: auto;
   }

@@ -473,7 +473,8 @@ a {
       top: 170px;
       width: 100vw;
     }
-    @media screen and (orientation: landscape) {
+    @media (orientation: landscape) {
+      width: 100vw;
       height: calc(100vh - 84px);
       overflow: auto;
     }

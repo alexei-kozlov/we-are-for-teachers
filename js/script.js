@@ -40,6 +40,7 @@
   // Slider Cards
   $('.cards__slider').slick({
     centerMode: true,
+    variableWidth: true,
     centerPadding: '38px',
     speed: 1500,
     autoplay: true,
