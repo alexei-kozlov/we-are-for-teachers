@@ -475,7 +475,7 @@ a {
     }
     @media (orientation: landscape) {
       width: 100vw;
-      height: 100vh;
+      height: calc(100vh - 130px);
       overflow: auto;
     }
   }
