@@ -463,7 +463,7 @@ a {
 @media (orientation: landscape) {
   .nav__list {
     width: 100vw;
-    height: calc(100vh - 130px);
+    height: calc(100vh - 150px);
     overflow: auto;
   }
 }
