@@ -463,7 +463,7 @@ a {
 @media (orientation: landscape) {
   .nav__list {
     width: 100vw;
-    height: calc(100vh - 84px);
+    height: 100vh;
     overflow: auto;
   }
 }
@@ -700,6 +700,7 @@ a {
 @media screen and (max-width: 600px) {
   .about__text {
     padding: 0 10px;
+    text-align: justify;
   }
 }
 
